@@ -4,13 +4,51 @@ import { View, Text, StyleSheet , Image,TouchableOpacity} from 'react-native'
 
 const Header = () => {
     return (
-        <View>
+        <View  style = {styles.container} >
             <TouchableOpacity>
                 <Image
                 style={styles.logo}
                 source={require('../../pictures/Instagram-Logo.png')}
                     />
              </TouchableOpacity>
+             
+             
+
+         <View style={styles.iconsContainer}>
+            <TouchableOpacity>
+                <Image
+                    source={{
+                        uri: 'https://img.icons8.com/fluency-systems-regular/60/ffffff/plus-2-math.png'
+                    }}
+                    style = {styles.icon}
+                    />
+             </TouchableOpacity>
+
+             <TouchableOpacity>
+                <Image
+                    source={{
+                        uri: 'https://img.icons8.com/fluency-systems-regular/60/ffffff/like--v1.png'
+                    }}
+                    style = {styles.icon}
+                    />
+             </TouchableOpacity>
+
+             <TouchableOpacity>
+                 <View style = {styles.unreadBadge}>
+                     <Text style= {styles.unreadBadgeText}> 11 </Text>
+                 </View>
+
+                <Image
+                    source={{
+                        uri: 'https://img.icons8.com/fluency-systems-regular/60/ffffff/facebook-messenger.png'
+                    }}
+                    style = {styles.icon}
+                    />
+             </TouchableOpacity>
+               
+                
+            </View>
+
         </View>
     )
 }
@@ -20,13 +58,41 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         flexDirection: 'row',
+        marginTop: 27 ,
+    
 
+    },
+    iconsContainer: {
+        flexDirection: 'row',
+        marginHorizontal: 15,
     },
     logo: {
         
         width: 140,
-        height: 100,
+        height:50,
         resizeMode: 'contain',
+    },
+    icon: {
+        width:30,
+        height:30,
+        marginLeft: 10,
+        resizeMode: 'contain',
+    },
+    unreadBadge: {
+        backgroundColor: '#ff3250',
+        position: 'absolute',
+        left:20,
+        bottom: 18,
+        width: 25,
+        height: 18,
+        borderRadius: 25,
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 100,//z gory nad icon messenger
+    },
+    unreadBadgeText: {
+        color : 'white',
+        fontWeight: '600'
     }
 })
 
