@@ -7,7 +7,7 @@ export default function App() {
   return (
     <NewPostScreen/>
   );
-  //<HomeScreen />
+  //<HomeScreen ,NewPostScreen />
 }
 
 
